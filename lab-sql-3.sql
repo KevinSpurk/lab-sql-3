@@ -34,7 +34,7 @@ limit 20;
 -- Add an additional column day_type with values 'weekend' and 'workday' depending on the rental day of the week. Check the CASE function.
 select *,
 case
-when weekday(convert(rental_date, date)) >= 6 then 'weekend'
+when weekday(convert(rental_date, date)) >= 5 then 'weekend'
 else 'workday' 
 end as day_type
 from rental
