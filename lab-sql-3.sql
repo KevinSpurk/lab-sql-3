@@ -24,6 +24,9 @@ limit 10;
 select min(convert(rental_date, date)) as first_rental, max(convert(rental_date, date)) as most_recent_rental, 
 	datediff(max(convert(rental_date, date)), min(convert(rental_date, date))) as operational_days
 from rental;
+-- alternative
+SELECT DATEDIFF(MAX(rental_date), MIN(rental_date)) AS active_days
+FROM rental;
 
 -- Show rental info with additional columns month and weekday. Get 20.
 select *, date_format(convert(rental_date, date), '%M') as rental_month, 
